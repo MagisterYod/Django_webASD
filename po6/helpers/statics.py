@@ -1,10 +1,12 @@
 import datetime
+import os
+from dotenv import load_dotenv, dotenv_values
 
+load_dotenv()
 
 p_date = datetime.datetime.now().strftime('%d.%m.%Y').split('.')
 p_time = datetime.datetime.now().strftime('%H.%M.%S')
-report_folder = 'C:\\Users\it_kuznecovia\Documents\ProjectsDjango\webASD\po6\static\\'
-#report_folder = 'C:\\inetpub\wwwroot\webASD\po6\static\\'
+report_folder = os.getenv('LOCAL_REPORT_FOLDER')
 
 users = {
     'it_kuznecovia': 'adm',

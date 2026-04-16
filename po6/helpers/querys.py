@@ -1,8 +1,12 @@
+import os
+
 import oracledb
+from dotenv import load_dotenv, dotenv_values
 
+load_dotenv()
 
-oracledb.init_oracle_client(lib_dir='C:\\app\product\instantclient_12_2')
-connection = oracledb.connect(user='ORACLEASD', password='OracleASD', dsn='piteservice')
+oracledb.init_oracle_client(lib_dir=os.getenv('LIB_DIR'))
+connection = oracledb.connect(user=os.getenv('USER'), password=os.getenv('PASSWORD'), dsn=os.getenv('DNS'))
 cursor = connection.cursor()
 
 
