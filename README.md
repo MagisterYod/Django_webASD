@@ -1,2 +1,2 @@
 # Django_webASD
-Miniapp for load reports in MS Excel
+Miniapp for load data from OraclDB and insert into MS Excel reports
