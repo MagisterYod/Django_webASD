@@ -1,2 +1,2 @@
 # Django_webASD
-Miniapp for reports
+Miniapp for load reports in MS Excel
