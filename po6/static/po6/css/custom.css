@@ -1,0 +1,36 @@
+.text__label{
+    min-width: 275px;
+}
+
+.text_volume_insert{
+    margin: 15px;
+    width: 67x;
+}
+
+.empty__label {
+    width: 5px;
+    height: 20px;
+    background: #DCDCDC;
+}
+
+.text__insert{
+    margin: 15px;
+    width: 87px;
+}
+
+.text__center{
+    vertical-align:middle;
+    text-align:center;
+}
+
+.button__width{
+    width: 100%;
+}
+
+.text__green{
+    color: #198754;
+}
+
+.text__red{
+    color: #dc3545;
+}

@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+<h2 class="text__center" xmlns="http://www.w3.org/1999/html">Выгрузка накопительного отчета ПО-6 за месяц</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="input-group">
+        <span class="input-group-text">Дата</span>
+        <input type="date" name="date" aria-label="First name" class="form-control text__center">
+    </div>
+    <button type="submit"
+            class="btn btn-outline-warning mt-3 shadow-sm button__width"
+            data-bs-dismiss="modal">
+        Выгрузить данные
+    </button>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{%load static%}
+<div class="dropdown">
+  <button class="btn btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+    Выгрузка отчета ПО-6
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="{% url 'get_shift_page' %}">Смена / Сутки</a></li>
+    <li><a class="dropdown-item" href="{% url 'get_cumulative_page' %}">Накопительный</a></li>
+    <li><a class="dropdown-item" href="{% url 'get_years_page' %}">Годовой</a></li>
+  </ul>
+</div>

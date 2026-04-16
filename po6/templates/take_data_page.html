@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+
+<form method="post">
+    <h2 class="text__center">
+        Выбор месяца
+        <input type="number"
+           id="id_year"
+           name="year"
+           value="{{ year }}"
+           min="2020"
+           max="2100"
+           step="1"
+           size="3"/>
+        года
+    </h2>
+    {% csrf_token %}
+    <select name="month" class="form-select" id="id_months">
+        <option name="month" value="None" selected>Выберите месяц...</option>
+        {% for key, value in months %}
+        <option name="{{ value }}" value="{{ value }}">{{ key }}</option>
+        {% endfor %}
+    </select>
+<!--    {{ form.as_p }}-->
+    <button type="submit" class="btn btn-outline-warning mt-3 shadow-sm button__width" data-bs-dismiss="modal">Выбрать месяц</button>
+</form>
+{% endblock %}

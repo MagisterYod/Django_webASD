@@ -1,0 +1,13 @@
+{% if num == '07' or num == '08' or num == '09' or num == '10' or num == '11' or num == '12' %}
+<div class="input-group mb-3 form-control text__center">
+    <div class="input-group-text text__center">
+        <input class="form-check-input mt-0"
+               id="month_{{ num }}"
+               name="month_{{ num }}"
+               type="checkbox"
+               value="{{ num }}"
+               aria-label="Checkbox for following text input">
+    </div>
+    <label style="margin-left: 25px; margin-top: 3px;">{{ month }}</label>
+</div>
+{% endif %}

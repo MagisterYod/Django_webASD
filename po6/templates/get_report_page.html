@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+<h2 class="text__center" xmlns="http://www.w3.org/1999/html">Выгрузка суточного рапорта</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="input-group">
+        <span class="input-group-text">Дата / смена</span>
+        <input type="date" name="date" aria-label="First name" class="form-control text__center">
+        <select name="shift" class="form-select text__center" id="id_shift">
+            <option name="shift" value="None" selected>Выберите смену...</option>
+            <option name="shift" value="0">За обе смены</option>
+            <option name="shift" value="1">1</option>
+            <option name="shift" value="2">2</option>
+        </select>
+    </div>
+    <button type="submit"
+            class="btn btn-outline-warning mt-3 shadow-sm button__width"
+            data-bs-dismiss="modal">
+        Выгрузить данные
+    </button>
+</form>
+{% endblock %}

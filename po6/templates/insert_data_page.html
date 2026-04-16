@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h2 class="text__center">
+        Внесение значений за {{ insert_date }}
+    </h2>
+    <div class="input-group input-group-sm mb-3">
+        <label class="text__label text__center" style="display: block; width: 200px; margin-top: 15px; padding-top: 4px;"><h5>Наименование</h5></label>
+        <label class="form-control text_volume_insert text__center"><h5>Объем</h5></label>
+        <label class="form-control text__insert text__center"><h5>ТО</h5></label>
+        <label class="form-control text__insert text__center"><h5>ТР</h5></label>
+        <label class="form-control text__insert text__center"><h5>КР</h5></label>
+        <label class="form-control text__insert text__center"><h5>РГ</h5></label>
+        <label class="form-control text__insert text__center"><h5>ОИ</h5></label>
+        <label class="form-control text__insert text__center"><h5>ИР</h5></label>
+        <label class="form-control text__insert text__center"><h5>БВ</h5></label>
+    </div>
+    {% for num, data in result.items %}
+        {% for id, list in data.items %}
+            {% include 'include_block.html' with id=id %}
+        {% endfor %}
+    {% endfor %}
+    <button type="submit" class="btn btn-outline-warning mt-3 shadow-sm button__width" data-bs-dismiss="modal">Внести данные</button>
+</form>
+{% endblock %}

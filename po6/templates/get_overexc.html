@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+<h2 class="text__center" xmlns="http://www.w3.org/1999/html">
+    Месячные значение повторной переэкскавации
+</h2>
+{% for item in result %}
+<form method="post">
+    {% csrf_token %}
+
+    <div class="hstack gap-3">
+        <div class="p-2">{{ item.0 }}</div>
+        <div class="p-2">смена {{ item.1 }}</div>
+        <div class="vr"></div>
+        {% if item.2 == "" %}
+        <input type="number" name="{{ item.3 }}" class="" aria-describedby="button-addon2">
+        <button type="submit"
+                class="btn btn-outline-warning"
+                data-bs-dismiss="modal">Внести
+        </button>
+        {% else  %}
+        <input type="number" name="{{ item.3 }}" value="{{ item.2 }}" class="" aria-describedby="button-addon2">
+        <button type="submit"
+                class="btn btn-outline-warning"
+                data-bs-dismiss="modal">Изменить
+        </button>
+        {% endif %}
+    </div>
+</form>
+{% endfor %}
+{% endblock %}

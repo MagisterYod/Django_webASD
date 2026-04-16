@@ -1,0 +1,46 @@
+<div class="input-group input-group-sm mb-3">
+    {% for item in list %}
+        {% for k, v in item.items %}
+            {% if k == 'text' %}
+                <label class="text__label">{{ v }}</label>
+            {% elif k == 'vol' %}
+                {% include 'input_volume_row.html' %}
+            {% elif k == 'to_h' %}
+                {% include 'input_hour_row.html' %}
+                <label style="margin: 1px;">:</label>
+            {% elif k == 'to_m' %}
+                {% include 'input_minute_row.html' %}
+            {% elif k == 'tr_h' %}
+                {% include 'input_hour_row.html' %}
+                <label style="margin: 1px;">:</label>
+            {% elif k == 'tr_m' %}
+                {% include 'input_minute_row.html' %}
+            {% elif k == 'kr_h' %}
+                {% include 'input_hour_row.html' %}
+                <label style="margin: 1px;">:</label>
+            {% elif k == 'kr_m' %}
+                {% include 'input_minute_row.html' %}
+            {% elif k == 'rg_h' %}
+                {% include 'input_hour_row.html' %}
+                <label style="margin: 1px;">:</label>
+            {% elif k == 'rg_m' %}
+                {% include 'input_minute_row.html' %}
+            {% elif k == 'oi_h' %}
+                {% include 'input_hour_row.html' %}
+                <label style="margin: 1px;">:</label>
+            {% elif k == 'oi_m' %}
+                {% include 'input_minute_row.html' %}
+            {% elif k == 'ir_h' %}
+                {% include 'input_hour_row.html' %}
+                <label style="margin: 1px;">:</label>
+            {% elif k == 'ir_m' %}
+                {% include 'input_minute_row.html' %}
+            {% elif k == 'bv_h' %}
+                {% include 'input_hour_row.html' %}
+                <label style="margin: 1px;">:</label>
+            {% elif k == 'bv_m' %}
+                {% include 'input_minute_row.html' %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>

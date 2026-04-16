@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+<form method="post">
+    <h2 class="text__center" xmlns="http://www.w3.org/1999/html">
+        Выгрузка годового отчета ПО-6 за
+        <input type="number"
+           id="id_year"
+           name="year"
+           value="{{ year }}"
+           min="2020"
+           max="2100"
+           step="1"
+           size="3"/>
+        год
+    </h2>
+    {% csrf_token %}
+    <div class="input-group input-group-sm mb-3">
+    {% for month, num in months.items %}
+        {% include 'month_06.html' %}
+    {% endfor %}
+    </div>
+    <div class="input-group input-group-sm mb-3">
+    {% for month, num in months.items %}
+        {% include 'month_12.html' %}
+    {% endfor %}
+    </div>
+    <div class="input-group input-group-sm mb-3">
+    {% include 'quarter_year.html' %}
+    </div>
+    <div class="input-group input-group-sm mb-3">
+    {% include 'half_year.html' %}
+    </div>
+<!--    <div class="input-group mb-3 form-control text__center">-->
+<!--        <div class="input-group-text text__center">-->
+<!--            <input class="form-check-input mt-0"-->
+<!--                   id="year"-->
+<!--                   name="year"-->
+<!--                   type="checkbox"-->
+<!--                   value="12"-->
+<!--                   aria-label="Checkbox for following text input">-->
+<!--        </div>-->
+<!--        <label style="margin-left: 25px; margin-top: 3px; font-size: 24px;">За весь год</label>-->
+<!--    </div>-->
+    <button type="submit"
+            class="btn btn-outline-warning mt-3 shadow-sm button__width"
+            data-bs-dismiss="modal">
+        Выгрузить данные
+    </button>
+</form>
+{% endblock %}

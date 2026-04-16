@@ -1,0 +1,23 @@
+<input type="number"
+       id="{{ k }}_{{ id }}"
+       name="{{ k }}_{{ id }}"
+       value="{{ v }}"
+       size="10"
+       placeholder="Объем"
+       onchange="checkFilled_{{ k }}_{{ id }}();"
+       class="form-control text__center"
+       style="width: 85px;"
+       aria-label="Sizing example input"
+       aria-describedby="inputGroup-sizing-sm"/>
+<script>
+    function checkFilled_{{ k }}_{{ id }}() {
+        var inputVal = document.getElementById("{{ k }}_{{ id }}");
+        if (inputVal.value == "") {
+            inputVal.style.backgroundColor = "#DCDCDC";
+        }
+        else{
+            inputVal.style.backgroundColor = "";
+        }
+        }
+    checkFilled_{{ k }}_{{ id }}();
+</script>

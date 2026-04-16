@@ -1,0 +1,10 @@
+{%load static%}
+<div class="dropdown">
+  <button class="btn btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Отчетность карьера
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="{% url 'get_report_dsk' %}">Отчет ДСК</a></li>
+    <li><a class="dropdown-item" href="{% url 'get_report' %}">Суточный рапорт</a></li>
+  </ul>
+</div>
